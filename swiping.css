@@ -12,16 +12,34 @@ body {
     height: 100%;
 }
 
-.person-card {
+#card-spot {
     height: 90%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.person-card {
+    height: 100%;
     width: 90%;
     border: 1px solid red;
-    margin: 0 auto;
     overflow-y: scroll;
+    margin: 0 auto;
+
+    transition: width 0.5s;
+}
+
+.person-card.noped {
+    width: 0;
+    margin-left: 5%;
+}
+
+.person-card.liked {
+    width: 0;
+    margin-right: 5%;
 }
 
 .pdf {
-    height: 90%;
+    height: 80%;
     background-color: beige;
 }
 
