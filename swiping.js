@@ -1,13 +1,15 @@
 let $card, $resume, $bio;
 let resumeOpacity = 1;
+let resumeHeightPercent = 100;
 let opacityUpdate = 0.1;
-let disappearPoint = 400;
+let disappearPoint = 300;
 let scrolled = 0;
 
 function scroll() {
-  console.log("scrolled");
   scrolled = $card[0].scrollTop;
-  $resume.style.opacity = "" + ((disappearPoint - scrolled) / disappearPoint);
+  let opacity = ((disappearPoint - scrolled) / disappearPoint);
+  if (opacity <= 0.2) opacity = 0.2;
+  $resume.style.opacity = "" + opacity;
   $bio.style.opacity = "" + (scrolled / disappearPoint);
 }
 
@@ -28,7 +30,6 @@ function generateCard(name) {
   $card = $('#card');
   $resume = $('.pdf')[0];
   $bio = $('.bio')[0];
-  console.log($card);
   $card[0].onscroll = scroll;
 }
 

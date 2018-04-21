@@ -4,8 +4,6 @@
 }
 
 body {
-    margin: 0 auto;
-    padding: 20%;
     background-color: #0468BF;
 }
 
@@ -14,6 +12,8 @@ body {
 }
 
 .form-box {
+    margin: 250px auto;
     background-color: #EBF2E1;
     border-radius: 7px;
+    width: 500px;
 }
