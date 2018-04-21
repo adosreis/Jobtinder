@@ -1,0 +1,33 @@
+body {
+    padding-top: 65px;
+    height: 100vh;
+    /* font-family: "Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif; */
+}
+
+.navbar {
+    border-bottom: 1px solid #999;
+}
+
+.content {
+    height: 100%;
+}
+
+.person-card {
+    height: 90%;
+    width: 90%;
+    border: 1px solid red;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.pdf {
+    height: 90%;
+    background-color: beige;
+}
+
+.buttons {
+    padding-top: 10px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
