@@ -1,0 +1,19 @@
+.form-data {
+    margin: auto;
+    text-align: center;
+}
+
+body {
+    margin: 0 auto;
+    padding: 20%;
+    background-color: #0468BF;
+}
+
+.submit-button {
+    margin:7px;
+}
+
+.form-box {
+    background-color: #EBF2E1;
+    border-radius: 7px;
+}
