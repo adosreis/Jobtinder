@@ -7,6 +7,10 @@ name = "pypi"
 
 [packages]
 requests = "*"
+flask = "*"
+mysqlclient = "*"
+flask-mysqldb = "*"
+pandas = "*"
 
 [requires]
 python_version = "3"
