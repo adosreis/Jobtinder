@@ -11,7 +11,7 @@
   <title>Post Job</title>
 </head>
 
-<body>
+<body style="padding-bottom:40px">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top">
@@ -48,21 +48,29 @@
     <h1 style="margin-bottom: 30px">Post job</h1>
     <form action="/applicantEdit" method="post">
       <div class="form-group">
-        <div class="form-group col-md-3">
-          <label for="inputCompanyName">Company Name</label>
-          <input type="text" class="form-control" id="inputCompanyName">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputCompanyName">Company Name</label>
+            <input type="text" class="form-control" id="inputCompanyName">
+          </div>
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputJobTitle">Job Title</label>
-          <input type="text" class="form-control" id="inputJobTitle">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputJobTitle">Job Title</label>
+            <input type="text" class="form-control" id="inputJobTitle">
+          </div>
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputJobDescription">Job Description</label>
-          <textarea id="inputJobDescription" cols="60" rows="12" style="resize: both"></textarea>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputJobDescription">Job Description</label>
+            <textarea id="inputJobDescription" cols="60" rows="12" style="resize: both"></textarea>
+          </div>
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputEmail">Email</label>
-          <input type="text" class="form-control" id="inputEmail">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputEmail">Email</label>
+            <input type="text" class="form-control" id="inputEmail">
+          </div>
         </div>
         <h3>Location</h3>
         <div class="form-row">
@@ -71,22 +79,26 @@
             <input type="text" class="form-control" id="inputLocationCity">
           </div>
           <div class="form-group col-md-3">
-            <label for="inputLocationCountry">Country</label>
-            <input type="text" class="form-control" id="inputLocationCountry">
-          </div>
-          <div class="form-group col-md-3">
             <label for="inputLocationState">State</label>
             <input type="text" class="form-control" id="inputLocationState">
           </div>
+          <div class="form-group col-md-3">
+            <label for="inputLocationCountry">Country</label>
+            <input type="text" class="form-control" id="inputLocationCountry">
+          </div>
         </div>
         <h3>Qualifications</h3>
-        <div class="form-group col-md-3">
-          <label for="inputMajor">Major</label>
-          <input type="text" class="form-control" id="inputMajor">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputMajor">Major</label>
+            <input type="text" class="form-control" id="inputMajor">
+          </div>
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputSkill">Skills</label>
-          <input type="text" class="form-control" id="inputSkill">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputSkill">Skill</label>
+            <input type="text" class="form-control" id="inputSkill">
+          </div>
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Post new job</button>
