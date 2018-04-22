@@ -69,6 +69,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
     
+    {% raw %}
     <script type="text/x-handlebars-template" id="card-template">
         <div id="card" class="card person-card">
             <div class="pdf">
@@ -101,8 +102,10 @@
             </div>
         </div>
     </script>
+    {%endraw%}
 
     <script src="swiping.js"></script>
+    <script>generateCard({{current}})</script>
 </body>
 
 </html>

@@ -20,9 +20,9 @@ function like() {
   setTimeout(function () { generateCard('last was liked') }, 500);
 }
 
-function generateCard(name) {
+function generateCard(person) {
   let template = Handlebars.compile(document.getElementById('card-template').innerHTML);
-  document.getElementById('card-spot').innerHTML = template({ name: name });
+  document.getElementById('card-spot').innerHTML = template({ name: person.firstName + ' ' + person.lastName });
 
   $card = $('#card');
   $resume = $('.pdf')[0];

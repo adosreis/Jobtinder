@@ -175,7 +175,7 @@ def applicant_viewer(job_id):
 	update(job_id)
 	cur = jobDB[job_id][0][jobDB[job_id][1]]
 	jobDB[job_id][1] += 1
-	return render_template("viewer.html")
+	return render_template("swiping.html", current=cur)
 
 
 
