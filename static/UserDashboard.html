@@ -44,13 +44,12 @@
     </nav>
 
     <div class="container content">
-        <h3>Applications</h3>
+        <h3>Matches</h3>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Position</th>
                     <th scope="col">Company</th>
-                    <th scope="col">Decision</th>
                 </tr>
             </thead>
             <tbody id="table-body">
@@ -63,10 +62,6 @@
         <tr>
             <td><a href="">{{jobTitle}}</a></td>
             <td>{{companyName}}</td>
-            <td><div>
-                <button class="btn btn-success">Accept</button>
-                <button class="btn btn-danger">Decline</button>
-            </div></td>
         </tr>
         {{/each}}
     </script>
