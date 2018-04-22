@@ -26,20 +26,22 @@ mydb = MySQLdb.connect(host=MYSQL_HOST,
 
 @app.route('/login')
 def login_page():
-	return render_template('login.html')
+	return app.send_static_file('Login.html')
 
 @app.route('/signup', methods = ['GET', 'POST'])
 def create_user():
-	cursor = mydb.cursor()
 	if request.method == 'GET':
-		return render_template('signup.html')
+		return app.send_static_file('Signup.html')
 	elif request.method ==  'POST':
+		cursor = mydb.cursor()
 		data = request.form
 		print(data)
 		sql = "INSERT INTO users (email, password, compOrApp) VALUES (%s,%s,%s)"
 		values = (data['email'],data['password'],data['compOrApp'])
 		cursor.execute(sql, values)
-		if data['compOrApp'] is 0:
+		mydb.commit()
+		cursor.close()
+		if int(data['compOrApp']) is 0:
 			id = cursor.lastrowid
 			return redirect(url_for('.create_comp', compId = id))
 		else:
@@ -47,27 +49,25 @@ def create_user():
 	else:
 		print("BAD NEWS")
 
-	mydb.commit()
-	cursor.close()
 
 @app.route('/create_comp', methods = ['GET','POST'])
 def create_comp(compId):
-	cursor = mydb.cursor()
 	if request.method == 'GET':
-		return render_template('create_job.html')
+		return app.send_static_file('jobPost.html')
 	elif request.method ==  'POST':
+		cursor = mydb.cursor()
 		data = request.form
 		print(data)
 		sql = "INSERT INTO jobs (companyId, companyName, title, description, email, location_country, location_state, location_city) VALUES (%s,%s,%s, %s, %s, %s, %s, %s)"
 		values = (data['companyId'], data['companyName'], data['title'], data['description'], data['email'], data['location_country'], data['location_state'], data['location_city'])
 		cursor.execute(sql, values)
+		mydb.commit()
+		cursor.close()
 		id = cursor.lastrowid
 		return redirect(url_for('.applicant_viewer', job_id = id))
 	else:
 		print("BAD NEWS")
 
-	mydb.commit()
-	cursor.close()
 
 @app.route('/')
 def index():

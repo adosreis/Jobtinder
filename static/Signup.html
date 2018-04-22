@@ -10,17 +10,17 @@
 </head>
 <body>
 <div class="jumbotron form-box">
-  <form action="/signup" class="form-inline">
+  <form action="/signup" method="post" class="form-inline">
     <div class="form-data">
       <h2 style="color:red">Jinder</h2>
       <h4>Sign up</h4>
       <input type="text" placeholder="Email" name="email" class="form-control">
       <br>
-      <input type="text" placeholder="Password" name="password" class="form-control">
+      <input type="password" placeholder="Password" name="password" class="form-control">
       <br>
-      <select class="form-control" style="margin:5px">
-        <option value="applicant">I am an applicant</option>
-        <option value="employer">I am an employer</option>
+      <select name="compOrApp" class="form-control" style="margin:5px">
+        <option value="1">I am an applicant</option>
+        <option value="0">I am an employer</option>
       </select>
       <br>
       <button type="submit" class="submit-button  btn-primary">Sign Up</button>
