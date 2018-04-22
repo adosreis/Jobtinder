@@ -50,7 +50,7 @@
                 <tr>
                     <th scope="col">Position</th>
                     <th scope="col">Company</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Decision</th>
                 </tr>
             </thead>
             <tbody id="table-body">
@@ -61,9 +61,12 @@
     <script type="text/x-handlebars-template" id="table-template">
         {{#each jobs}}
         <tr>
-            <td>{{jobTitle}}</td>
+            <td><a href="">{{jobTitle}}</a></td>
             <td>{{companyName}}</td>
-            <td>{{#if accepted}}Accepted!{{else}}Not accepted{{/if}}</td>
+            <td><div>
+                <button class="btn btn-success">Accept</button>
+                <button class="btn btn-danger">Decline</button>
+            </div></td>
         </tr>
         {{/each}}
     </script>
