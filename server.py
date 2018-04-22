@@ -5,6 +5,8 @@ import MySQLdb
 import util
 #import lol_classifier
 
+import flask_login
+
 
 
 
@@ -12,7 +14,6 @@ MYSQL_HOST = 'localhost'
 MYSQL_USER = 'root'
 MYSQL_DB = 'Hackru'
 MYSQL_PASSWORD = 'Nitro06snow'
-app = Flask(__name__)
 # mysql = MySQL(app)
 # app.config['MYSQL_HOST'] = 'localhost'
 # app.config['MYSQL_USER'] = 'root'
@@ -24,9 +25,50 @@ mydb = MySQLdb.connect(host=MYSQL_HOST,
 	passwd=MYSQL_PASSWORD,
 	db=MYSQL_DB,use_unicode=True, charset="utf8")
 
-@app.route('/login')
+app = Flask(__name__)
+app.secret_key = 'ej&e2gw*^e0i_&_0^ws)yk)d$th!kz2zd&0rx=syf6s8+p-r3q'
+login_manager = flask_login.LoginManager()
+login_manager.init_app(app)
+
+class User(flask_login.UserMixin):
+	pass
+
+@login_manager.user_loader
+def load_user(user_id):
+	sql = 'SELECT id, email FROM users WHERE id = %s'
+	cursor = mydb.cursor()
+	cursor.execute(sql, (user_id,))
+	if len(list(cursor)) > 0:
+		user = User()
+		user.id = user_id
+		return user
+	return None
+	
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
+	if request.method == 'GET':
+		return app.send_static_file('Login.html')
+	
+	sql = 'SELECT id, email, password FROM users WHERE email = %s'
+	cursor = mydb.cursor()
+	cursor.execute(sql, (request.form['email'],))
+	if len(list(cursor)) > 0:
+		db_pass = list(cursor)[0][2]
+		if db_pass == request.form['password']:
+			user = User()
+			user.id = list(cursor)[0][0]
+			flask_login.login_user(user)
+			return redirect('/dashboard')
+
+	#fail
 	return app.send_static_file('Login.html')
+
+@app.route('/logout')
+@flask_login.login_required
+def logout():
+	flask_login.logout_user()
+	return redirect('/')
+			
 
 @app.route('/signup', methods = ['GET', 'POST'])
 def create_user():
