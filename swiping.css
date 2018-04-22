@@ -19,21 +19,24 @@ body {
 }
 
 .person-card {
+    overflow-y: scroll;
+}
+
+.card {
     height: 100%;
     width: 90%;
     border: 1px solid red;
-    overflow-y: scroll;
     margin: 0 auto;
 
     transition: width 0.5s;
 }
 
-.person-card.noped {
+.card.noped {
     width: 0;
     margin-left: 5%;
 }
 
-.person-card.liked {
+.card.liked {
     width: 0;
     margin-right: 5%;
 }
@@ -48,4 +51,14 @@ body {
     width: 200px;
     margin: 0 auto;
     text-align: center;
+}
+
+.job-header {
+    padding: 30px;
+    background-color: #EBF2E1;
+    border: 1px solid black;
+}
+
+.job-description {
+    overflow-y: scroll;
 }

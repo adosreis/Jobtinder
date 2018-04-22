@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="3">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="Login.css" type="text/css">
-  <title></title>
+  <link rel="stylesheet" href="Form.css" type="text/css">
+  <title>Jinder Login</title>
 </head>
 <body>
-  <div class="jumbotron" id="login-box">
-    <form action="/login" class="form-inline">
+  <div class="jumbotron form-box">
+    <form action="/login" method="post" class="form-inline">
       <div class="form-data">
         <h2 style="color:red">Jinder</h2>
         <h4>Please sign in</h4>
@@ -17,7 +18,7 @@
         <br>
         <input type="text" placeholder="Password" name="password" class="form-control">
         <br>
-        <button type="submit" class="login-button  btn-primary">Login</button>
+        <button type="submit" class="submit-button  btn-primary">Login</button>
         <br>
         If you don't already have an account
         <a href="/sign-up">sign up</a>
