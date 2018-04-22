@@ -1,7 +1,4 @@
 let $card, $resume, $bio;
-let resumeOpacity = 1;
-let resumeHeightPercent = 100;
-let opacityUpdate = 0.1;
 let disappearPoint = 300;
 let scrolled = 0;
 

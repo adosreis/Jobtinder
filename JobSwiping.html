@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="swiping.css">
+    <title>Jinder</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+        <!--<h1 class="mt-5">Logo Nav by Start Bootstrap</h1>
+        <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of
+            the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.</p>-->
+
+
+        <div id='card-spot'></div>
+
+        <div class="buttons">
+            <button type="button" class="btn btn-danger nope" onclick="nope()">Nope</button>
+            <button type="button" class="btn btn-success like" onclick="like()">Like</button>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
+    
+    <script type="text/x-handlebars-template" id="card-template">
+        <div id="card" class="card">
+            <div class="job-header">
+                <h2>Software Developer</h2>
+                <h3>company inc.</h3>
+            </div>
+            <div class="job-description">
+                <p>
+                    BACKGROUND
+
+                    Smartiply, Inc. is a startup mobile technology Company headquartered in New Jersey, U.S.A., transforming the industry by creating a fusion between Fog Computing and Internet of Things (IOT) to build the first Fog Network/Computing Platform that enables Collaboration and Resource Sharing among devices through innovative products and services. The company has an immediate opening for Linux Embedded Software Engineer (firmware).
+
+                    JOB TITLE
+
+                    Software Engineer – Video Engieering
+
+                    LOCATION
+
+                    Basking Ridge, NJ; Manhattan, NY; Atlanta, GA; Dallas, TX
+
+                    RESPONSIBILITIES
+
+                    The software engineer will play a key role in developing innovative IOT products and services leveraging our fog computing platform. The successful candidate will be expected to work closely with his/her peers and will be deeply involved in the requirement gathering, design, development, testing, deployment, and technical support of IOT products.
+
+                    QUALIFICATIONS
+
+                    Bachelor’s degree in Computer Science, Computer Engineering, or Electrical Engineering from an accredited university or 4-year college is required. Master’s degree in one of these fields is desired.
+                    2 to 5+ years of experience working as software engineer developing video-based applications, preferably on a Linux-based platform.
+                    Experience working with media streaming protocols, codecs, and transports/container formats: RTSP, RTMP, HLS, DASH, MPEG-2, H.264/AVC, AAC, AC3, MP4, MPEG-2 TS.
+                    Experience with video encoding (H.264, H.265) and HTML5 Video.
+                    Experience with CDN for video streaming and CDN architectures (caches, origin servers, proxies, etc.).
+                    Experience developing time-shifting and video recording software.
+                    Experience with video management systems, specifically for IP surveillance.
+                    Advanced C++ programming with strong embedded programming skills and excellent multithreaded debugging skills.
+                    Skillful in scripting language experience (Bash, Perl, Python).
+                    Strong Linux experience. Good knowledge of Linux build systems (kconfig, cmake, gnu make) and Linux packaging systems (dpkg, rpm).
+                    Experience in OpenWRT, DD-WRT, LEDE or Tomato.
+                    Practical experience with building software on TCP/UDP networking APIs (desired on Linux)
+                    Experience in TCP/IP, routers, firewalls, switches, VPN, IPSec, DHCP, DNS, as well as in LAN/WAN network administration and engineering.
+                    Excellent debugging and troubleshooting skills using network analysis tools such as WireShark, etc.
+                    Good working experience in using GIT-like source control and CI build tools like Atlassian Bitbucket, Bamboo, etc.
+                    A big plus with experience in setting up Docker and AWS projects to deploy applications in Ubuntu Linux environment
+                    Good familiarity with project collaboration tools, such as Jira, Rally, etc.
+                    Practical experience with working in an Agile environment
+                    Ability to work well with tight schedules and rapid development cycles
+                    Outstanding written and verbal communication skills with a professional and credible demeanor
+                    A self-starter who possesses exceptional time management skills with great attention to detail, and the ability to work independently when managing multiple priorities.
+                    Smartiply is looking for a high energy and software engineer to develop a fog-enabled IOT platform. The individual will work in a fast paced and virtual environment and will play a major role in developing a cutting edge enabling IOT platform. The successful candidate must be a team player, self-motivated, well-organized, and result oriented, with strong analytical, problem solving, and communication (verbal and written) skills, and must be able to work independently and drive results with passion. He/she must exercise good software development practice, including periodic code review, good documentation, and version control, and apply agile development methodology and provide daily updates and weekly/bi-weekly product demos. He/she must be capable of multitasking and performing multiple duties as needed.
+
+                    The successful candidate shall be offered a competitive salary, with the possibility of stock options, commensurate with experience, along with healthcare and retirement benefits and paid vacation.
+
+                    Smartiply is committed to equal employment opportunity, work-life balance, and career development.
+
+                    To apply for this position, please submit your resume and a cover letter stating your salary expectations.
+
+                    Job Type: Full-time
+
+                    Experience:
+
+                    Video Engineering: 5 years (Required)
+                    Education:
+
+                    Master's (Preferred)
+                    Job Location:
+
+                    Basking Ridge, NJ 07920 (Required)
+                    18 days ago - Save Job
+                </p>
+            </div>
+        </div>
+    </script>
+
+    <script src="swiping.js"></script>
+</body>
+
+</html>
